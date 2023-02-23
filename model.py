@@ -90,35 +90,36 @@ def evaluate(model, X_test, y_test):
 ### RUNNING THE MODEL
 
 
-# Collecting train and test sets    
-X_train, y_train, X_test, y_test = get_data()
+if __name__ == '__main__':
+    # Collecting train and test sets    
+    X_train, y_train, X_test, y_test = get_data()
 
-# Preprocess train and test dataset
-train_shape = (60000, 28, 28, 1)
-test_shape = (10000, 28, 28, 1)
-X_train = preprocess(X_train, train_shape)
-X_test = preprocess(X_test,test_shape)
+    # Preprocess train and test dataset
+    train_shape = (60000, 28, 28, 1)
+    test_shape = (10000, 28, 28, 1)
+    X_train = preprocess(X_train, train_shape)
+    X_test = preprocess(X_test,test_shape)
 
-print(X_train.shape)
+    print(X_train.shape)
 
-# Building the model
-model = build_model(filters_1=32, filters_2=64, kernel_size=(3,3), activation='relu', input_shape=(28, 28, 1),
-                    pool_size=(2, 2), rate=(0.4), units_1=128, units_2=10, activation_dense='softmax')
-
-
-# Train the model
-train_model(model, X_train, y_train, X_test, y_test)
+    # Building the model
+    model = build_model(filters_1=32, filters_2=64, kernel_size=(3,3), activation='relu', input_shape=(28, 28, 1),
+                        pool_size=(2, 2), rate=(0.4), units_1=128, units_2=10, activation_dense='softmax')
 
 
-# evaluating the model
-cm, acc = evaluate(model, X_test, y_test)
+    # Train the model
+    train_model(model, X_train, y_train, X_test, y_test)
 
-'''print('Confution Matrix')
-print(cm)
-print(f'Accuracy Score of model is: {acc * 100}%')'''
 
-# Serializing the model using pickle
-import pickle
-pickle_out = open('model.pkl', 'wb')
-pickle.dump(model, pickle_out)
-pickle_out.close()
+    # evaluating the model
+    '''cm, acc = evaluate(model, X_test, y_test)
+
+    print('Confution Matrix')
+    print(cm)
+    print(f'Accuracy Score of model is: {acc * 100}%')'''
+
+    # Serializing the model using pickle
+    import pickle
+    pickle_out = open('model.pkl', 'wb')
+    pickle.dump(model, pickle_out)
+    pickle_out.close()

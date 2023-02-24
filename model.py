@@ -1,7 +1,6 @@
 # Loading libraries
 import tensorflow as tf
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, accuracy_score
 from tensorflow.keras.models import Sequential

@@ -9,6 +9,7 @@ from tensorflow.keras.layers import MaxPool2D
 from tensorflow.keras.layers import Dropout
 from tensorflow.keras.layers import Flatten
 from tensorflow.keras.layers import Dense
+import os
 
 
 # Load the pickled model
@@ -62,7 +63,7 @@ def make_prediction(model, input):
 # Main funciton
 def main():
     
-    file = 'model.pkl'
+    file = os.path.join('model.pkl')
     
     st.title('Hand Written Digit Recognition with CNN')
     activities = ['ML Model', 'About']

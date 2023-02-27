@@ -1,7 +1,6 @@
 # Loading libraries
 import tensorflow as tf
 import numpy as np
-import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, accuracy_score
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D
@@ -118,7 +117,10 @@ if __name__ == '__main__':
     print(f'Accuracy Score of model is: {acc * 100}%')'''
 
     # Serializing the model using pickle
-    import pickle
-    pickle_out = open('model.pkl', 'wb')
-    pickle.dump(model, pickle_out)
-    pickle_out.close()
+    # import pickle
+    # pickle_out = open('model.pkl', 'wb')
+    # pickle.dump(model, pickle_out)
+    # pickle_out.close()
+    
+    # Saving model
+    model.save('trained_model.h5')

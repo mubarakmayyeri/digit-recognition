@@ -4,14 +4,15 @@ import pickle
 import cv2
 import numpy as np
 import tensorflow
+from tensorflow.keras.models import load_model
 import os
 
 
 # Load the pickled model
-def load_model(file):
+def get_model(file):
     cnn = None
     pickle_in = open(file, 'rb')
-    cnn = pickle.load(pickle_in)
+    cnn = load_model(file)
     if cnn is None:
         st.write('Loading the Model....')
     else:
@@ -57,7 +58,7 @@ def make_prediction(model, input):
 # Main funciton
 def main():
     
-    file = os.path.join('model.pkl')
+    file = os.path.join('trained_model.h5')
     
     st.title('Hand Written Digit Recognition with CNN')
     activities = ['ML Model', 'About']
@@ -65,7 +66,7 @@ def main():
 
     if choices == 'Deep Learning Model':
         
-        model = load_model(file)
+        model = get_model(file)
         
         # Uploading image
         img = st.file_uploader('Upload image of a digit below:', type=['png', 'jpg', 'jpeg'])

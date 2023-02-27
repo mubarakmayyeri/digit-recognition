@@ -8,7 +8,6 @@ import os
 
 
 # Load the pickled model
-@st.cache_data
 def load_model(file):
     cnn = None
     pickle_in = open(file, 'rb')

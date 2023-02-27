@@ -3,12 +3,7 @@ from PIL import Image
 import pickle
 import cv2
 import numpy as np
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D
-from tensorflow.keras.layers import MaxPool2D
-from tensorflow.keras.layers import Dropout
-from tensorflow.keras.layers import Flatten
-from tensorflow.keras.layers import Dense
+import tensorflow
 import os
 
 

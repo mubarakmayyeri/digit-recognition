@@ -62,7 +62,7 @@ def main():
     
     st.title('Hand Written Digit Recognition with CNN')
     activities = ['ML Model', 'About']
-    choices = st.selectbox(label='-----------', options=['Choose an option','Deep Learning Model', 'Perfomance Summary', 'About'])
+    choices = st.selectbox(label='-----------', options=['Choose an option','Deep Learning Model', 'Performance Summary', 'About'])
 
     if choices == 'Deep Learning Model':
         
@@ -116,6 +116,19 @@ def main():
                     st.write('Have I got it right?')
                 except Exception as e:
                     st.error('An Unknown error has occurred')
+    
+    elif choices == 'Performance Summary':
+        st.write('Coming Soon')
+    
+    elif choices == 'About':
+        st.subheader('About')
+        st.markdown('''
+                    This project implements a **convolutional neural network (CNN)** to recognize handwritten digits from the MNIST dataset.
+                    The model is trained using Keras with TensorFlow as the backend.
+                    
+                    
+                    ##### Created by **Mubarak Mayyeri**
+                    ''')
                     
 
 if __name__ == '__main__':

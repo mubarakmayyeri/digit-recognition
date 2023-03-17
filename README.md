@@ -2,7 +2,7 @@
 
 This project implements a convolutional neural network (CNN) to recognize handwritten digits from the MNIST dataset. The model is trained using Keras with TensorFlow as the backend, and the trained model is then deployed using Streamlit, which allows users to upload an image of a digit and get a prediction from the model.
 
-Use the app - https://mubarakmayyeri-digit-recognition-cnn-main-syl3gi.streamlit.app/
+[![Use the app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mubarakmayyeri-digit-recognition-cnn-main-syl3gi.streamlit.app/)
 
 ![alt text](https://github.com/mubarakmayyeri/digit-recognition-CNN/blob/master/assets/images/MNIST-handwritten-digits-dataset-visualized-by-Activeloop.webp "Digit Recognition with CNN") 
 
